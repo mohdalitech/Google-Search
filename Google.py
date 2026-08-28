@@ -31,7 +31,7 @@ if st.button("Search",type="primary"):
     result=quote(query)
     url=f"https://www.google.com/search?q={result}"
     with sync_playwright() as p:
-        browser=p.chromium.launch(headless=False)
+        browser=p.chromium.launch(headless=True)
         page=browser.new_page()
         input("Complete the Google verification, then press Enter...")
         results = page.locator("h3")
