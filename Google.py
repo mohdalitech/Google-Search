@@ -33,9 +33,7 @@ if st.button("Search",type="primary"):
     with sync_playwright() as p:
         browser=p.chromium.launch(headless=False)
         page=browser.new_page()
-        st.write(page.goto(url))
         input("Complete the Google verification, then press Enter...")
-        st.write("Python continued after verification")
         results = page.locator("h3")
 
         for i in range(results.count()):
